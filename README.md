@@ -1,2 +1,2 @@
 # kuplace_web
-Development of the web version of the native Android app, kuplace.
+Develop the web version of native Android app kuplace using React and Firebase.
