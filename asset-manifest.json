@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/larry1121/kuplace_web/static/css/main.d34172d5.css",
+    "main.js": "/larry1121/kuplace_web/static/js/main.9590ffcb.js",
+    "index.html": "/larry1121/kuplace_web/index.html",
+    "main.d34172d5.css.map": "/larry1121/kuplace_web/static/css/main.d34172d5.css.map",
+    "main.9590ffcb.js.map": "/larry1121/kuplace_web/static/js/main.9590ffcb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d34172d5.css",
+    "static/js/main.9590ffcb.js"
+  ]
+}
