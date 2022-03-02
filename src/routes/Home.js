@@ -41,13 +41,14 @@ const Home = ({ userObj }) => {
     }));
     
     
-    console.log(nweetArr);
+    //console.log(nweetArr);
     setNweets(nweetArr);
     
-    console.log(nweets);
+    
     });
     
     }, []);
+    //console.log(nweets);
     
     return (
       <div className="container">
@@ -57,7 +58,7 @@ const Home = ({ userObj }) => {
           <Nweet
           key={nweet.id}
           nweetObj={nweet}
-          isOwner={nweet.creatorId===userObj.uid}
+          isOwner={nweet.nweetObj.creatorId===userObj.uid}
           />
         ))}
       </div>

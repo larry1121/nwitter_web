@@ -15,14 +15,17 @@ const Nweet = ({ nweetObj, isOwner }) => {
     const ok = window.confirm("Are you sure you want to delete this nweet?");
     if (ok) {
         await deleteDoc(NweetTextRef );
-        await deleteObject(urlRef)
+        if(nweetObj.nweetObj.attachmentUrl !== "" ){
+          await deleteObject(urlRef);
+          }
+        
     }
   };
   const toggleEditing = () => setEditing((prev) => !prev);
   const onSubmit = async (event) => {
     event.preventDefault();
     await updateDoc(NweetTextRef, {
-        text: newNweet,
+        nweetObj : {text: newNweet,createdAt:`${nweetObj.nweetObj.createdAt}`,creatorId:`${nweetObj.nweetObj.creatorId}`,attachmentUrl:`${nweetObj.nweetObj.attachmentUrl}`},
         });
     setEditing(false);
   };
@@ -32,6 +35,8 @@ const Nweet = ({ nweetObj, isOwner }) => {
     } = event;
     setNewNweet(value);
   };
+  console.log(nweetObj);
+  console.log(nweetObj.id);
   return (
     <div className="nweet">
       {editing ? (
@@ -54,8 +59,8 @@ const Nweet = ({ nweetObj, isOwner }) => {
         </>
       ) : (
         <>
-          <h4>{nweetObj.text}</h4>
-          {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} />}
+          <h4>{`${nweetObj.nweetObj.text}`}</h4>
+          {nweetObj.nweetObj.attachmentUrl && <img src={nweetObj.nweetObj.attachmentUrl} />}
           {isOwner && (
             <div className="nweet__actions">
                <span onClick={onDeleteClick}>
