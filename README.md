@@ -1,2 +1,2 @@
 # kuplace_web
-Develop the web version of native Android app kuplace using React and Firebase.
+Develop the web version of twitter using React and Firebase.
